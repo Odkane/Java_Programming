@@ -8,8 +8,7 @@ public class SpeedyConverter {
            return -1;
          
         else {
-            var round = Math.round(kilometersPerHour / 1.60934);
-            return round;
+            return Math.round(kilometersPerHour / 1.60934);
         }
         
     }

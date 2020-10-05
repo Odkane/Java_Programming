@@ -1,4 +1,6 @@
-package Java.Masterclass.OOP;
+package Java.Masterclass.OOP.Challenge;
+
+import Java.Masterclass.OOP.Challenge.Hamburger;
 
 public class HealthyBurger extends Hamburger {
 

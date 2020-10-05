@@ -1,4 +1,4 @@
-package Java.Masterclass.OOP;
+package Java.Masterclass.OOP.Challenge;
 
 public class DeluxeBurger extends Hamburger {
     public DeluxeBurger() {
