@@ -1,0 +1,91 @@
+.label {
+    -fx-text-fill: black;
+    -fx-background-color: transparent;
+}
+
+.parent {
+    -fx-background-color: transparent;
+}
+
+.dark-panel{
+    -fx-background-radius: 10 10 10 10;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-color: #E4E4E3;
+}
+
+.main-btns {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-text-fill: transparent;
+}
+
+.exit-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-text-fill: transparent;
+}
+
+.icons {
+    -fx-fill : #5F6368;
+}
+
+.round-btn {
+    -fx-background-color: #5F6368;
+    -fx-background-radius: 100%;
+}
+
+.main-btns:hover {
+ /*   -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-background-color: #F3A978;
+    -fx-border-width: 0px 0px 3px 0px;
+    -fx-border-radius: 0px; */
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+
+}
+
+.image {
+    -fx-background-color: #FEFEFE;
+    -fx-text-fill : #FEFEFE;
+}
+
+.volume {
+    -fx-background-color: transparent;
+
+}
+
+/* #id Selektor */
+/*
+#volumeUpBtn {
+    -fx-background-image: url("./images/volume-up.svg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 32 32;
+    -fx-background-color: transparent;
+}
+
+#volumeDownBtn {
+    -fx-background-image: url("./images/volume-down.svg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 32 32;
+    -fx-background-color: transparent;
+}
+
+#volumeOffBtn {
+    -fx-background-image: url("./images/volume-off.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 32 32;
+    -fx-background-color: transparent;
+}
+
+#volumeMuteBtn {
+    -fx-background-image: url("./images/volume-mute.svg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 32 32;
+    -fx-background-color: transparent;
+}
+*/

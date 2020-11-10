@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="stagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="670.0" styleClass="parent" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gemini.PlayerController">
+   <children>
+      <Pane layoutX="27.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="320.0" styleClass="dark-panel" stylesheets="@styles.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="playlistBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="292.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#openPlaylist" prefHeight="27.0" prefWidth="20.0" styleClass="main-btns" stylesheets="@styles.css">
+               <graphic>
+                  <FontAwesomeIcon iconName="BARS" size="1.2em" styleClass="icons" />
+               </graphic>
+            </JFXButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="-3.0" prefHeight="27.0" prefWidth="223.0" text="Gemini's Player">
+               <font>
+                  <Font name="Al Bayan Plain" size="18.0" />
+               </font></Label>
+            <Label fx:id="titelLabel" layoutX="14.0" layoutY="259.0" prefHeight="30.0" prefWidth="291.0" text="Label" />
+            <JFXButton fx:id="backwardBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="73.0" layoutY="323.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#backwardMedia" prefHeight="30.0" prefWidth="30.0" styleClass="main-btns" stylesheets="@styles.css">
+               <graphic>
+                  <FontAwesomeIcon iconName="BACKWARD" size="2em" styleClass="icons" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="playBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="324.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#playMedia" prefHeight="27.0" prefWidth="30.0" styleClass="main-btns" stylesheets="@styles.css">
+               <graphic>
+                  <FontAwesomeIcon fx:id="playIcon" iconName="PLAY" size="2em" styleClass="icons" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="forwardBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="224.0" layoutY="323.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#forwardMedia" prefHeight="30.0" prefWidth="30.0" styleClass="main-btns" stylesheets="@styles.css">
+               <graphic>
+                  <FontAwesomeIcon iconName="FORWARD" size="2em" styleClass="icons" />
+               </graphic>
+            </JFXButton>
+            <JFXSlider fx:id="timeSlider" layoutX="54.0" layoutY="298.0" onMouseReleased="#listenTime" prefHeight="15.0" prefWidth="223.0" />
+            <JFXSlider fx:id="volumeSlider" layoutX="73.0" layoutY="403.0" onMouseReleased="#listenVolume" prefHeight="15.0" prefWidth="181.0" />
+            <JFXButton fx:id="repeatPlaylistBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="278.0" layoutY="325.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#activateRepeat" prefHeight="25.0" prefWidth="25.0" styleClass="main-btns" stylesheets="@styles.css">
+               <graphic>
+                  <FontAwesomeIcon iconName="REPEAT" size="1.5em" styleClass="icons" />
+               </graphic>
+            </JFXButton>
+            <Label fx:id="startLabel" layoutX="16.0" layoutY="297.0" prefHeight="17.0" prefWidth="39.0" text="Label" />
+            <Label fx:id="endLabel" layoutX="277.0" layoutY="297.0" prefHeight="17.0" prefWidth="39.0" text="Label" />
+            <JFXButton fx:id="volumeUpBtn" layoutX="260.0" layoutY="396.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" styleClass="round-btn" />
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="398.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="25.0" styleClass="main-btns" stylesheets="@styles.css" text="Button">
+               <graphic>
+                  <FontAwesomeIcon iconName="MUSIC" size="1.5em" styleClass="icons" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="playlistBtn1" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#exitPlayer" prefHeight="27.0" prefWidth="20.0" styleClass="main-btns" stylesheets="@styles.css">
+               <graphic>
+                  <FontAwesomeIcon iconName="CLOSE" size="1.2em" styleClass="icons" />
+               </graphic>
+            </JFXButton>
+            <StackPane fx:id="imgPane" layoutX="-1.0" layoutY="41.0" prefHeight="215.0" prefWidth="320.0">
+               <children>
+                  <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
+                  <ImageView fx:id="imageView" fitHeight="183.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+      <Pane fx:id="playlistPane" layoutX="354.0" prefHeight="380.0" prefWidth="320.0" styleClass="dark-panel" stylesheets="@styles.css" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXListView fx:id="playlistView" layoutX="4.0" layoutY="41.0" prefHeight="331.0" prefWidth="311.0" />
+            <JFXButton fx:id="deleteSongBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#deleteSong" prefHeight="40.0" prefWidth="40.0" styleClass="main-btns" stylesheets="@styles.css">
+               <graphic>
+                  <FontAwesomeIcon iconName="MINUS" onMouseClicked="#deleteSong" size="1.5em" styleClass="icons" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="addSongBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addSong" prefHeight="40.0" prefWidth="40.0" styleClass="main-btns" stylesheets="@styles.css">
+               <graphic>
+                  <FontAwesomeIcon iconName="PLUS" size="1.5em" styleClass="icons" />
+               </graphic>
+            </JFXButton>
+         </children></Pane>
+   </children>
+</AnchorPane>

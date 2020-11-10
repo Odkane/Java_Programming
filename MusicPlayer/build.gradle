@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'org.beryx.jlink' version '2.12.0'
+}
+
+group 'org.gemini'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+javafx {
+    version = "11.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media']
+}
+
+mainClassName = "$moduleName/org.gemini.MainApp"
+
+jlink {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'MainApp'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.jfoenix', name: 'jfoenix', version: '9.0.10'
+    compile group: 'de.jensd', name: 'fontawesomefx', version: '8.1'
+
+}
